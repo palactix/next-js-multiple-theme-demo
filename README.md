@@ -1,54 +1,60 @@
+# 🌗 Next.js Multi-Theme Demo with Tailwind CSS & Shadcn UI
 
-# 🌗 Dynamic Multi-Theme Setup with Next.js + Tailwind CSS + Shadcn UI
-
-This project demonstrates a **fully dynamic theme switcher** built with:
+This repository demonstrates a **fully dynamic multiple-theme setup** using:
 
 - ✅ Next.js (App Router)
-- 🎨 Tailwind CSS (v4+)
-- 🧩 Shadcn UI
-- ⚙️ next-themes
-- 🌈 Custom themes with light/dark variants using CSS variables
+- 🎨 Tailwind CSS v4+
+- 🧩 Shadcn UI Components
+- ⚙️ `next-themes` for client-side theming
+- 🌈 Custom Light/Dark themes (e.g., Red, Blue, Chrono)
 
-> Built and maintained by [@jitendra](https://jitendra.dev)
+> Built by [Jitendra Meena](https://jitendra.dev) • [📰 Blog post](https://jitendra.dev/blog)
+
+[![MIT License](https://img.shields.io/github/license/palactix/next-js-multiple-theme-demo)](LICENSE)  
+[![Live on Vercel](https://vercelbadge.vercel.app/api/palactix/next-js-multiple-theme-demo)](https://next-js-multiple-theme-demo.vercel.app)
 
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- Multiple custom themes (`blue`, `red`, `chrono` etc.) with both light and dark modes
-- Instant theme switcher (no reload required)
-- Themes are stored in `localStorage` for persistent preference
-- Dynamically updates HTML classes to reflect theme changes
-- Fully responsive UI using Shadcn components
-- SEO-friendly and production-ready setup
+- 🔄 Multiple **fully dynamic themes** with **light and dark** variants:
+  - `theme-blue-light`, `theme-blue-dark`
+  - `theme-red-light`, `theme-red-dark`
+  - `theme-chrono-light`, `theme-chrono-dark`
+- 🌍 Stored in `localStorage` and instantly applied at runtime
+- 🔌 Powered by `next-themes` with full SSR support
+- 🧱 Modular structure with `theme.config.ts` and Shadcn UI
+- 🧩 Easily extensible for adding new themes or design tokens
 
 ---
 
 ## 📦 Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Shadcn UI](https://ui.shadcn.com/)
-- **Theme Management**: [next-themes](https://github.com/pacocoursey/next-themes)
-- **Icons**: [Lucide](https://lucide.dev/)
+| Tech           | Description                         |
+|----------------|-------------------------------------|
+| **Next.js**    | React Framework with App Router     |
+| **Tailwind CSS** | Utility-first CSS engine           |
+| **Shadcn UI**  | Accessible component library        |
+| **next-themes**| Lightweight client-side theming     |
+| **Lucide Icons** | Beautiful icon set                 |
 
 ---
 
-## 🛠️ Setup Instructions
+## 🚀 Getting Started
 
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/yourusername/theme-switcher-nextjs.git
-cd theme-switcher-nextjs
+git clone https://github.com/palactix/next-js-multiple-theme-demo.git
+cd next-js-multiple-theme-demo
 ````
 
 ### 2. Install Dependencies
 
-Make sure you’re using **Node.js v18+** and run:
-
 ```bash
 npm install
+# or
+yarn install
 ```
 
 ### 3. Run the Dev Server
@@ -57,101 +63,115 @@ npm install
 npm run dev
 ```
 
-The app should now be running at [http://localhost:3000](http://localhost:3000)
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🎨 Theme Structure
-
-Themes are defined using CSS variables in `globals.css`. Each theme is a class applied to the `<html>` element.
-
-Example:
-
-```css
-:root[data-theme='blue-light'] {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --primary: #1e40af;
-  --secondary: #e0e7ff;
-  /* ... more variables */
-}
-```
-
-We support the following themes:
-
-* `theme-blue-light`
-* `theme-blue-dark`
-* `theme-red-light`
-* `theme-red-dark`
-* `theme-chrono-light`
-* `theme-chrono-dark`
-
----
-
-## 🌓 Theme Switching
-
-We use `next-themes` for dynamic theme switching. To change theme:
-
-```tsx
-import { useTheme } from "next-themes";
-const { setTheme } = useTheme();
-setTheme("theme-blue-dark");
-```
-
-> The selected theme will persist in `localStorage` and be restored on page load.
-
----
-
-## 🧪 Folder Structure Overview
+## 🗂️ Project Structure
 
 ```
 .
 ├── app/
-│   └── layout.tsx
-│   └── page.tsx
+│   └── layout.tsx         // App shell and <ThemeProvider />
+│   └── page.tsx           // Home page with theme switcher
 ├── components/
-│   └── ui/
-│       └── button.tsx
-│       └── dropdown-menu.tsx
-│   └── theme-switcher.tsx
+│   ├── mode-toggle.tsx   // Buttons to change theme
+│   └── ui/                // Shadcn UI components
 ├── styles/
-│   └── globals.css
-├── tailwind.config.ts
-├── theme.config.ts  <-- Theme list here
+│   └── globals.css        // Theme classes and Tailwind base
+├── tailwind.config.ts     // Tailwind with custom tokens
+├── tsconfig.json
+├── next.config.mjs
+└── ...
 ```
 
 ---
 
-## 🧑‍💻 Contributing
+## 🎨 How Theming Works
 
-Want to add new themes or improve the UI? PRs are welcome!
+We use CSS variables scoped to theme classes like:
+
+```css
+.theme-blue-light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #1e40af;
+  --secondary: #e0e7ff;
+  /* and more... */
+}
+```
+
+Each theme is stored and managed via:
+
+```ts
+import { useTheme } from "next-themes";
+
+const { setTheme } = useTheme();
+setTheme("theme-red-dark"); // applies new class and saves to localStorage
+```
 
 ---
 
-## 🧠 Credits
+## 📁 Add a New Theme
+
+1. Add new class in `globals.css`:
+
+```css
+.theme-green-light {
+  --background: #f0fff4;
+  --primary: #10b981;
+  /* ... */
+}
+```
+
+2. Add entry in `mode-toggle.tsx`:
+
+```ts
+{ label: "Green Light", value: "theme-green-light" }
+```
+
+3. Done! It'll appear in the theme switcher instantly.
+
+---
+
+## 📦 Deployment
+
+This project is easily deployable on [Vercel](https://vercel.com/) or any Node.js server.
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgements
 
 * [Shadcn UI](https://ui.shadcn.com/)
-* [Next.js](https://nextjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [next-themes](https://github.com/pacocoursey/next-themes)
+* [Lucide Icons](https://lucide.dev/)
+* Inspired by clean design, performance-first development, and practical UX.
 
 ---
 
 ## 🌐 Author
 
-Made with ❤️ by [Jitendra Meena](https://jitendra.dev)
+**Jitendra Meena**
+🚀 [jitendra.dev](https://jitendra.dev) • 🧑‍💻 [@palactix](https://github.com/palactix)
+💡 Building developer-first tools, components & ideas
 
 ---
-
-## 📃 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ```
 
----
+Let me know once your **blog post** is live — I’ll help optimize meta titles, OG tags, and schema markup if you like.
 
-Let me know once your GitHub repo is live — I’ll update the `git clone` URL and include a **"Live Demo" badge** if you deploy it (e.g., on Vercel).
-
-Would you like a **custom badge set (Tech stack, MIT license, etc.)** at the top too?
+Want me to generate a **cover image prompt** for this README as well?
 ```
