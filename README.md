@@ -1,10 +1,4 @@
-Absolutely! Here's a complete `README.md` for your public repo. It's tailored for a **Next.js + Tailwind CSS + Shadcn UI** project with **dynamic multi-theme support** using `next-themes`.
 
-You can tweak the repo name, author, or links as needed.
-
----
-
-````markdown
 # 🌗 Dynamic Multi-Theme Setup with Next.js + Tailwind CSS + Shadcn UI
 
 This project demonstrates a **fully dynamic theme switcher** built with:
