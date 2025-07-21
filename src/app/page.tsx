@@ -166,14 +166,13 @@ export default function App() {
                   H3: The King&apos;s Decree
                 </h3>
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                  H4: The Joke's on You
+                  H4: The Joke&apos;s on You
                 </h4>
                 <p className="leading-7 [&:not(:first-child)]:mt-6">
                   The king, seeing how much his subjects enjoyed jokes, decided
                   to introduce a joke tax.
                 </p>
-                <blockquote className="mt-6 border-l-2 pl-6 italic">
-                  "After all," he said, "why should the jesters have all the fun?"
+                <blockquote className="mt-6 border-l-2 pl-6 italic">&quot;After all,&quot; he said, &quot;why should the jesters have all the fun?&quot;
                 </blockquote>
                 <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
                   @shadcn/ui
@@ -298,7 +297,7 @@ export default function App() {
                       <DialogTitle>Edit profile</DialogTitle>
                       <DialogDescription>
                         Make changes to your profile here. Click save when
-                        you're done.
+                        you&apos;re done.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
