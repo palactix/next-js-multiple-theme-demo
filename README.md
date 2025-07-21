@@ -127,7 +127,7 @@ setTheme("theme-red-dark"); // applies new class and saves to localStorage
 2. Add entry in `mode-toggle.tsx`:
 
 ```ts
-{ label: "Green Light", value: "theme-green-light" }
+{ name: "Green Light", value: "theme-green-light" }
 ```
 
 3. Done! It'll appear in the theme switcher instantly.
@@ -166,12 +166,3 @@ This project is open source and available under the [MIT License](LICENSE).
 **Jitendra Meena**
 🚀 [jitendra.dev](https://jitendra.dev) • 🧑‍💻 [@palactix](https://github.com/palactix)
 💡 Building developer-first tools, components & ideas
-
----
-
-```
-
-Let me know once your **blog post** is live — I’ll help optimize meta titles, OG tags, and schema markup if you like.
-
-Want me to generate a **cover image prompt** for this README as well?
-```
