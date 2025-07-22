@@ -129,7 +129,18 @@ export default function App() {
             <p className="font-bold">UI Showcase</p>
           </div>
           <div className="flex items-center space-x-2">
-            {/* <NavigationMenuDemo /> */}
+             {/* add a text here to link the main article of this page to "https://jitendra.dev/build-dynamic-themes-in-nextjs-with-tailwind-shadcn-ui" */}
+            <p className="text-sm text-muted-foreground">
+              Read the full article{" "}
+              <a
+                href="https://jitendra.dev/build-dynamic-themes-in-nextjs-with-tailwind-shadcn-ui"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                here
+              </a>
+            </p>
             <ModeToggle />
           </div>
         </div>
