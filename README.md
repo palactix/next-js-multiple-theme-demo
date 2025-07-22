@@ -145,6 +145,10 @@ npm start
 
 ---
 
+## Read full article
+
+Read the full article on [`jitendra.dev`](https://jitendra.dev/build-dynamic-themes-in-nextjs-with-tailwind-shadcn-ui)
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
