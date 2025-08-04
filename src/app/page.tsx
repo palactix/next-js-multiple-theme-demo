@@ -2,14 +2,9 @@
 
 import * as React from "react";
 import {
-  ChevronDown,
   Circle,
-  Mail,
-  Menu,
-  PlusCircle,
-  Star,
+  Mail
 } from "lucide-react";
-import { z } from "zod";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 
@@ -79,8 +74,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+  NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
 import {
   Table,
